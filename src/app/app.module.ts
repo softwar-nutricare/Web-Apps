@@ -7,7 +7,8 @@ import { BodyComponent } from './pages/body/body.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { HeaderComponent } from './pages/header/header.component';
 import {MaterialModule} from "./modules/material.module";
-import { NutricionistComponent } from './nutricionist/nutricionist.component';
+import {NutritionistsComponent} from "./pages/nutritionists/pages/nutritionists/nutritionists.component";
+import {AppRoutingModule} from "./modules/app-routing.module";
 
 @NgModule({
   declarations: [
@@ -15,12 +16,13 @@ import { NutricionistComponent } from './nutricionist/nutricionist.component';
     BodyComponent,
     FooterComponent,
     HeaderComponent,
-    NutricionistComponent
+    NutritionistsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
