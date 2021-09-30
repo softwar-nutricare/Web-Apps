@@ -1,0 +1,14 @@
+{
+  "nutritionists" : [
+    { "id": 1, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
+    { "id": 2, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
+    { "id": 3, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
+    { "id": 4, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
+    { "id": 5, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
+    { "id": 6, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
+    { "id": 7, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
+    { "id": 8, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
+    { "id": 9, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
+    { "id": 10, "firstName": "Rosario", "lastName": "Ruiz", "age": 21}
+  ]
+}
