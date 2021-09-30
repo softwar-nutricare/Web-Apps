@@ -7,7 +7,7 @@ import { BodyComponent } from './pages/body/body.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { HeaderComponent } from './pages/header/header.component';
 import {MaterialModule} from "./modules/material.module";
-import { NutritionistsComponent } from './pages/nutritionists/pages/nutritionists/nutritionists.component';
+import { NutricionistComponent } from './nutricionist/nutricionist.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { NutritionistsComponent } from './pages/nutritionists/pages/nutritionist
     BodyComponent,
     FooterComponent,
     HeaderComponent,
-    NutritionistsComponent
+    NutricionistComponent
   ],
   imports: [
     BrowserModule,
