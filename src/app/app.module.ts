@@ -8,6 +8,14 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { HeaderComponent } from './pages/header/header.component';
 import {MaterialModule} from "./modules/material.module";
 import { NutritionistsComponent } from './pages/nutritionists/pages/nutritionists/nutritionists.component';
+import { NutricionistComponentComponent } from './nutricionist-component/nutricionist-component.component';
+import { NutricionistComponent } from './nutricionist/nutricionist.component';
+import { ClientComponentComponent } from './client-component/client-component.component';
+import { RecipeComponentComponent } from './recipe-component/recipe-component.component';
+import { AppoimentComponentComponent } from './appoiment-component/appoiment-component.component';
+import { ClientComponent } from './client/client.component';
+import { AppoimentComponent } from './appoiment/appoiment.component';
+import { RecipeComponent } from './recipe/recipe.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +23,15 @@ import { NutritionistsComponent } from './pages/nutritionists/pages/nutritionist
     BodyComponent,
     FooterComponent,
     HeaderComponent,
-    NutritionistsComponent
+    NutritionistsComponent,
+    NutricionistComponentComponent,
+    NutricionistComponent,
+    ClientComponentComponent,
+    RecipeComponentComponent,
+    AppoimentComponentComponent,
+    ClientComponent,
+    AppoimentComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,
