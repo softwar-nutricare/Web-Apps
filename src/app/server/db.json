@@ -1,14 +1,20 @@
 {
   "nutritionists" : [
-    { "id": 1, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
-    { "id": 2, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
-    { "id": 3, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
-    { "id": 4, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
-    { "id": 5, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
-    { "id": 6, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
-    { "id": 7, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
-    { "id": 8, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
-    { "id": 9, "firstName": "Rosario", "lastName": "Ruiz", "age": 21},
-    { "id": 10, "firstName": "Rosario", "lastName": "Ruiz", "age": 21}
+    { "id": 1,"usermane":"usuario1","password":"1", "firstName": "Rosario", "lastName": "Ruiz", "email":"correo1@gmail.com","cnpNumber":"12345","datetime":"01-01-2021"},
+    { "id": 2,"usermane":"usuario2","password":"2", "firstName": "Juan", "lastName": "Cadillo", "email":"correo2@gmail.com","cnpNumber":"12343","datetime":"02-01-2021"},
+    { "id": 3,"usermane":"usuario3","password":"3", "firstName": "Renzo", "lastName": "Medrano", "email":"correo3@gmail.com","cnpNumber":"12545","datetime":"03-01-2021"},
+    { "id": 4,"usermane":"usuario4","password":"4", "firstName": "Erika", "lastName": "Chavez", "email":"correo4@gmail.com","cnpNumber":"12645","datetime":"04-01-2021"},
+    { "id": 5,"usermane":"usuario5","password":"5", "firstName": "carlos", "lastName": "Nalvarte", "email":"correo5@gmail.com","cnpNumber":"98765","datetime":"05-05-2021"}
+   
+  ], 
+  "clients" : [
+    { "id": 1,"usermane":"usuario6","password":"1", "firstName": "alonso", "lastName": "Garcia","email":"correo6@gmail.com","datetime":"01-01-2021" },
+    { "id": 2, "usermane":"usuario7","password":"2","firstName": "flor", "lastName": "Sato","email":"correo7@gmail.com","datetime":"01-01-2021"},
+    { "id": 3, "usermane":"usuario8","password":"3","firstName": "javier", "lastName": "Caval","email":"correo8@gmail.com","datetime":"01-01-2021"},
+    { "id": 4, "usermane":"usuario9","password":"4","firstName": "leandro", "lastName": "Pinaso", "email":"correo9@gmail.com","datetime":"01-01-2021"},
+    { "id": 5, "usermane":"usuario10","password":"5","firstName": "sara", "lastName": "Dias", "email":"correo10@gmail.com","datetime":"01-01-2021"}
+
   ]
+
+  
 }
