@@ -10,13 +10,12 @@ import { HeaderComponent } from './pages/header/header.component';
 import {NutritionistsComponent} from "./pages/nutritionists/pages/nutritionists/nutritionists.component";
 import {AppoimentComponent} from "./appoiment/appoiment.component";
 import { DialogCreateComponent } from './pages/nutritionists/pages/dialog-create/dialog-create.component';
-import { ClientsComponent } from './pages/clients/pages/clients/clients.component';
-import {MatDialogModule } from '@angular/material/dialog';
+import {ClientsComponent} from "./pages/clients/pages/clients/clients.component";
+import {DialogCreateClientsComponent} from "./pages/clients/pages/dialog-create-clients/dialog-create-clients.component";
 
 
 @NgModule({
   declarations: [
-    MatDialogModule,
     AppComponent,
     BodyComponent,
     FooterComponent,
@@ -24,8 +23,8 @@ import {MatDialogModule } from '@angular/material/dialog';
     NutritionistsComponent,
     AppoimentComponent,
     DialogCreateComponent,
-    
     ClientsComponent,
+    DialogCreateClientsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +34,6 @@ import {MatDialogModule } from '@angular/material/dialog';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DialogCreateComponent,MatDialogModule]
+  entryComponents: [DialogCreateComponent]
 })
 export class AppModule { }

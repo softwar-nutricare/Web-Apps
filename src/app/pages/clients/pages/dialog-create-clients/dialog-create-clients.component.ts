@@ -2,18 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Client} from "../../model/client";
 import {ClientsService} from "../../services/clients.service";
-import {Observable} from "rxjs";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatDialogModule } from '@angular/material/dialog';
-import {catchError, retry} from "rxjs/operators";
-
 
 @Component({
   selector: 'app-dialog-create',
-  templateUrl: './dialog-create.component.html',
-  styleUrls: ['./dialog-create.component.css']
+  templateUrl: './dialog-create-clients.component.html',
+  styleUrls: ['./dialog-create-clients.component.css']
 })
-export class DialogCreateComponent implements OnInit {
+export class DialogCreateClientsComponent implements OnInit {
 
   formValue !: FormGroup;
   clientModelObj: Client = new Client();
@@ -38,7 +33,7 @@ export class DialogCreateComponent implements OnInit {
     this.clientModelObj.firstName = this.formValue.value.firstName;
     this.clientModelObj.lastName = this.formValue.value.lastName;
     this.clientModelObj.email = this.formValue.value.email;
-    
+
 
     this.clientsService.create(this.clientModelObj).subscribe(response =>{
       console.log(response);

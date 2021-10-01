@@ -4,11 +4,8 @@ import {MatTableDataSource} from "@angular/material/table";
 import {ClientsService} from "../../services/clients.service";
 import {Client} from "../../model/client";
 import {NgForm} from "@angular/forms";
-//import * as _ from 'lodash';
 import {MatDialog} from "@angular/material/dialog";
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {MatDialogModule} from '@angular/material/dialog';
-import {DialogCreateComponent} from "../dialog-create/dialog-create.component";
+import {DialogCreateClientsComponent} from "../dialog-create-clients/dialog-create-clients.component";
 
 @Component({
   selector: 'app-clients',
@@ -101,7 +98,7 @@ export class ClientsComponent implements OnInit {
   }
 
   openDialog() {
-    let dialogRef = this.dialog.open(DialogCreateComponent);
+    let dialogRef = this.dialog.open(DialogCreateClientsComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
