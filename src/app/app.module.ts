@@ -10,6 +10,8 @@ import { BodyComponent } from './pages/body/body.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { HeaderComponent } from './pages/header/header.component';
 import {NutritionistsComponent} from "./pages/nutritionists/pages/nutritionists/nutritionists.component";
+import {AppoimentComponent} from "./appoiment/appoiment.component";
+import { DialogCreateComponent } from './pages/nutritionists/pages/dialog-create/dialog-create.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import {NutritionistsComponent} from "./pages/nutritionists/pages/nutritionists/
     BodyComponent,
     FooterComponent,
     HeaderComponent,
-    NutritionistsComponent
+    NutritionistsComponent,
+    AppoimentComponent,
+    DialogCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,5 +32,6 @@ import {NutritionistsComponent} from "./pages/nutritionists/pages/nutritionists/
   ],
   providers: [],
   bootstrap: [AppComponent],
+  entryComponents: [DialogCreateComponent]
 })
 export class AppModule { }

@@ -5,6 +5,8 @@ import {NutritionistsService} from "../../services/nutritionists.service";
 import {Nutritionist} from "../../model/nutritionist";
 import {NgForm} from "@angular/forms";
 import * as _ from 'lodash';
+import {MatDialog} from "@angular/material/dialog";
+import {DialogCreateComponent} from "../dialog-create/dialog-create.component";
 
 @Component({
   selector: 'app-nutritionists',
@@ -24,7 +26,7 @@ export class NutritionistsComponent implements OnInit {
 
   isEditMode = false;
 
-  constructor(private nutritionistService: NutritionistsService) {
+  constructor(private nutritionistService: NutritionistsService, public dialog: MatDialog) {
     this.nutritionistData = {} as Nutritionist;
     this.dataSource = new MatTableDataSource<any>();
   }
@@ -94,5 +96,13 @@ export class NutritionistsComponent implements OnInit {
     } else {
       console.log('Invalid data');
     }
+  }
+
+  openDialog() {
+    let dialogRef = this.dialog.open(DialogCreateComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

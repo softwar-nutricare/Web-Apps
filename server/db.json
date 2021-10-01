@@ -11,16 +11,6 @@
       "datetime": "03-01-2021"
     },
     {
-      "id": 8,
-      "username": "usuario8",
-      "password": "8",
-      "firstName": "Angela",
-      "lastName": "Gonzales",
-      "email": "correo8@gmail.com",
-      "cnpNumber": "98765",
-      "datetime": "12-08-2021"
-    },
-    {
       "id": 9,
       "username": "usuario9",
       "password": "9",
@@ -29,6 +19,36 @@
       "email": "correo9@gmail.com",
       "cnpNumber": "98765",
       "datetime": "23-01-2021"
+    },
+    {
+      "id": 10,
+      "username": "asdsd",
+      "password": "23423",
+      "firstName": "Manuel",
+      "lastName": "Ramiro",
+      "email": "dmsf@asdf",
+      "cnpNumber": "324535",
+      "datetime": "12/12/12"
+    },
+    {
+      "id": 11,
+      "username": "mastidnkfs",
+      "password": "234234",
+      "firstName": "Martin",
+      "lastName": "Salazar",
+      "email": "mart.in01@gmail.com",
+      "cnpNumber": "234234",
+      "datetime": "12/12/12"
+    },
+    {
+      "id": 12,
+      "username": "3452345",
+      "password": "23452345",
+      "firstName": "23453245",
+      "lastName": "23452345",
+      "email": "23453245",
+      "cnpNumber": "23452345",
+      "datetime": "23452345"
     }
   ],
   "clients": [
