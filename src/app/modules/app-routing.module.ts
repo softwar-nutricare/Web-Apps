@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {NutritionistsComponent} from "../pages/nutritionists/pages/nutritionists/nutritionists.component";
 
+
 const routes: Routes = [
-  { path: "nutritionists", component: NutritionistsComponent }
+  { path: 'nutritionists', component: NutritionistsComponent },
+  { path: '', redirectTo: 'nutritionists', pathMatch: 'full' }
 ]
 
 @NgModule({
-  declarations: [],
   imports: [
-    CommonModule,
     RouterModule.forRoot(routes)
   ],
   exports: [
