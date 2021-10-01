@@ -1,25 +1,81 @@
 {
-  "nutritionists" : [
-    { "id": 1,"username":"usuario1","password":"1", "firstName": "Rosario", "lastName": "Ruiz", "email":"correo1@gmail.com","cnpNumber":"12345","datetime":"01-01-2021"},
-    { "id": 2,"username":"usuario2","password":"2", "firstName": "Juan", "lastName": "Cadillo", "email":"correo2@gmail.com","cnpNumber":"12343","datetime":"02-01-2021"},
-    { "id": 3,"username":"usuario3","password":"3", "firstName": "Renzo", "lastName": "Medrano", "email":"correo3@gmail.com","cnpNumber":"12545","datetime":"03-01-2021"},
-    { "id": 4,"username":"usuario4","password":"4", "firstName": "Erika", "lastName": "Chavez", "email":"correo4@gmail.com","cnpNumber":"12645","datetime":"04-01-2021"},
-    { "id": 5,"username":"usuario5","password":"5", "firstName": "carlos", "lastName": "Albarado", "email":"correo5@gmail.com","cnpNumber":"98765","datetime":"05-05-2021"},
-    { "id": 6,"username":"usuario6","password":"6", "firstName": "Miguel", "lastName": "Pastor", "email":"correo6@gmail.com","cnpNumber":"98765","datetime":"05-05-2021"},
-    { "id": 7,"username":"usuario7","password":"7", "firstName": "Diego", "lastName": "De la Fuente", "email":"correo7@gmail.com","cnpNumber":"98765","datetime":"05-05-2021"},
-    { "id": 8,"username":"usuario8","password":"8", "firstName": "Angela", "lastName": "Gonzales", "email":"correo8@gmail.com","cnpNumber":"98765","datetime":"12-08-2021"},
-    { "id": 9,"username":"usuario9","password":"9", "firstName": "Coco", "lastName": "Kiryu", "email":"correo9@gmail.com","cnpNumber":"98765","datetime":"23-01-2021"},
-    { "id": 10,"username":"usuario10","password":"10", "firstName": "Milagros", "lastName": "Trujillo", "email":"correo10@gmail.com","cnpNumber":"98765","datetime":"21-06-2021"}
-
+  "nutritionists": [
+    {
+      "id": 3,
+      "username": "usuario3",
+      "password": "3",
+      "firstName": "Renzo",
+      "lastName": "Medrano",
+      "email": "correo3@gmail.com",
+      "cnpNumber": "12545",
+      "datetime": "03-01-2021"
+    },
+    {
+      "id": 8,
+      "username": "usuario8",
+      "password": "8",
+      "firstName": "Angela",
+      "lastName": "Gonzales",
+      "email": "correo8@gmail.com",
+      "cnpNumber": "98765",
+      "datetime": "12-08-2021"
+    },
+    {
+      "id": 9,
+      "username": "usuario9",
+      "password": "9",
+      "firstName": "Coco",
+      "lastName": "Kiryu",
+      "email": "correo9@gmail.com",
+      "cnpNumber": "98765",
+      "datetime": "23-01-2021"
+    }
   ],
-  "clients" : [
-    { "id": 1,"username":"usuario6","password":"1", "firstName": "alonso", "lastName": "Garcia","email":"correo6@gmail.com","datetime":"01-01-2021" },
-    { "id": 2, "username":"usuario7","password":"2","firstName": "flor", "lastName": "Sato","email":"correo7@gmail.com","datetime":"01-01-2021"},
-    { "id": 3, "username":"usuario8","password":"3","firstName": "javier", "lastName": "Caval","email":"correo8@gmail.com","datetime":"01-01-2021"},
-    { "id": 4, "username":"usuario9","password":"4","firstName": "leandro", "lastName": "Pinaso", "email":"correo9@gmail.com","datetime":"01-01-2021"},
-    { "id": 5, "username":"usuario10","password":"5","firstName": "sara", "lastName": "Dias", "email":"correo10@gmail.com","datetime":"01-01-2021"}
-
+  "clients": [
+    {
+      "id": 1,
+      "username": "usuario6",
+      "password": "1",
+      "firstName": "alonso",
+      "lastName": "Garcia",
+      "email": "correo6@gmail.com",
+      "datetime": "01-01-2021"
+    },
+    {
+      "id": 2,
+      "username": "usuario7",
+      "password": "2",
+      "firstName": "flor",
+      "lastName": "Sato",
+      "email": "correo7@gmail.com",
+      "datetime": "01-01-2021"
+    },
+    {
+      "id": 3,
+      "username": "usuario8",
+      "password": "3",
+      "firstName": "javier",
+      "lastName": "Caval",
+      "email": "correo8@gmail.com",
+      "datetime": "01-01-2021"
+    },
+    {
+      "id": 4,
+      "username": "usuario9",
+      "password": "4",
+      "firstName": "leandro",
+      "lastName": "Pinaso",
+      "email": "correo9@gmail.com",
+      "datetime": "01-01-2021"
+    },
+    {
+      "id": 5,
+      "username": "usuario10",
+      "password": "5",
+      "firstName": "sara",
+      "lastName": "Dias",
+      "email": "correo10@gmail.com",
+      "datetime": "01-01-2021"
+    }
   ]
-
-
 }

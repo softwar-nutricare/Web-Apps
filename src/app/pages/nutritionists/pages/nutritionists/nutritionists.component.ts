@@ -3,6 +3,8 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatTableDataSource} from "@angular/material/table";
 import {NutritionistsService} from "../../services/nutritionists.service";
 import {Nutritionist} from "../../model/nutritionist";
+import {NgForm} from "@angular/forms";
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-nutritionists',
@@ -11,17 +13,23 @@ import {Nutritionist} from "../../model/nutritionist";
 })
 export class NutritionistsComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'username', 'password', 'firstName', 'lastName', 'email', 'cnpNumber', 'datetime'];
+  displayedColumns: string[] = ['id', 'username', 'password', 'firstName', 'lastName', 'email', 'cnpNumber', 'datetime', 'actions'];
   nutritionistData: Nutritionist;
 
   @ViewChild(MatPaginator, {static: true})
   paginator!: MatPaginator;
+
+  @ViewChild('nutritionistForm', {static: false})
+  nutritionistForm!: NgForm;
+
+  isEditMode = false;
 
   constructor(private nutritionistService: NutritionistsService) {
     this.nutritionistData = {} as Nutritionist;
     this.dataSource = new MatTableDataSource<any>();
   }
 
+  // Methods
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
     this.getAllNutritionists();
@@ -33,6 +41,58 @@ export class NutritionistsComponent implements OnInit {
     });
   }
 
+  editItem(element: Nutritionist) {
+    this.nutritionistData = _.cloneDeep(element);
+    this.isEditMode = true;
+  }
 
+  cancelEdit() {
+    this.isEditMode = false;
+    this.nutritionistForm.resetForm();
+  }
 
+  deleteItem(id: number) {
+    this.nutritionistService.delete(id).subscribe((response: any) => {
+      this.dataSource.data = this.dataSource.data.filter((o: Nutritionist) => {
+        return o.id !== id ? o : false;
+      });
+    });
+    console.log(this.dataSource.data);
+  }
+
+  addStudent() {
+    this.nutritionistService.update(this.nutritionistData.id, this.nutritionistData).subscribe((response: any) => {
+      this.dataSource.data = this.dataSource.data.map((o: Nutritionist) => {
+        if (o.id == response.id) {
+          o = response;
+        }
+        return o;
+      });
+      this.cancelEdit();
+    });
+  }
+
+  updateStudent() {
+    this.nutritionistService.update(this.nutritionistData.id, this.nutritionistData).subscribe((response: any) => {
+      this.dataSource.data = this.dataSource.data.map((o: Nutritionist) => {
+        if (o.id === response.id) {
+          o = response;
+        }
+        return o;
+      });
+      this.cancelEdit();
+    });
+  }
+
+  onSubmit() {
+    if (this.nutritionistForm.form.valid) {
+      if (this.isEditMode) {
+        this.updateStudent();
+      } else {
+        this.addStudent();
+      }
+    } else {
+      console.log('Invalid data');
+    }
+  }
 }

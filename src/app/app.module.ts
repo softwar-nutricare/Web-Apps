@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import {AppRoutingModule} from "./modules/app-routing.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from "./modules/material.module";
-import {HttpClientModule} from "@angular/common/http";
 
 import { BodyComponent } from './pages/body/body.component';
 import { FooterComponent } from './pages/footer/footer.component';
@@ -25,10 +24,9 @@ import {NutritionistsComponent} from "./pages/nutritionists/pages/nutritionists/
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AppRoutingModule,
-    HttpClientModule
+    AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

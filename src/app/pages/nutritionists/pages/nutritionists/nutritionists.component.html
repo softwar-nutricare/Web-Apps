@@ -1,9 +1,64 @@
-
-
 <div class="table-wrapper">
   <h1>Nutritionists CRUD</h1>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
+  <!-- Forms -->
+  <h2>{{ isEditMode ? 'Edit Student' : 'Add new Student'}}</h2>
+  <form (submit)="onSubmit()" #nutritionistForm='ngForm'>
+    <!-- Username Form -->
+    <mat-form-field>
+      <input matInput placeholder="Username" name="username" required
+             [(ngModel)]="nutritionistData.username">
+    </mat-form-field>
+
+    <!-- Password Form -->
+    <mat-form-field>
+      <input matInput placeholder="Password" name="password" required
+             [(ngModel)]="nutritionistData.password">
+    </mat-form-field>
+
+    <!-- First Name Form -->
+    <mat-form-field>
+      <input matInput placeholder="First Name" name="firstName" required
+             [(ngModel)]="nutritionistData.firstName">
+    </mat-form-field>
+
+    <!-- Last Name Form -->
+    <mat-form-field>
+      <input matInput placeholder="Last Name" name="lastName" required
+             [(ngModel)]="nutritionistData.lastName" >
+    </mat-form-field>
+
+    <!-- Email Form -->
+    <mat-form-field>
+      <input matInput placeholder="Email" name="email" required
+             [(ngModel)]="nutritionistData.email" >
+    </mat-form-field>
+
+    <!-- CNP Number Form -->
+    <mat-form-field>
+      <input matInput placeholder="CNP Number" name="cnpNumber" required
+             [(ngModel)]="nutritionistData.cnpNumber" >
+    </mat-form-field>
+
+    <!-- Datetime Form -->
+    <mat-form-field>
+      <input matInput placeholder="Datetime" name="datetime" required
+             [(ngModel)]="nutritionistData.datetime" >
+    </mat-form-field>
+
+
+    <ng-container *ngIf="isEditMode; else elseTemplate">
+      <button mat-button color="primary">Update</button>
+      <button mat-button color="warn" (click)="cancelEdit()">Cancel</button>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <button mat-button color="primary">Add</button>
+    </ng-template>
+  </form>
+
+
+  <!-- Data Table -->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- ID Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> #ID </th>
@@ -52,8 +107,18 @@
       <td mat-cell *matCellDef="let element"> {{element.datetime}} </td>
     </ng-container>
 
+    <!-- Edit and Delete Column-->
+    <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
+    <td mat-cell *matCellDef="let element">
+      <a href="javascript:void(0)" (click)="editItem(element)"><mat-icon>edit</mat-icon></a>
+      |
+      <a href="javascript:void(0)" (click)="deleteItem(element.id)"><mat-icon>delete</mat-icon></a>
+    </td>
+  </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns" [ngClass]="{ 'editable-row': nutritionistData.id == row.id}"></tr>
   </table>
 
   <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
