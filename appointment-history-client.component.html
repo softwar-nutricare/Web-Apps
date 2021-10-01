@@ -1,0 +1,33 @@
+<!-- <br/>
+<h2>Historial de asesorías</h2>
+<br/>
+<button type="button" class="btn btn-success" (click)='return()'>
+    Atrás
+</button>
+<br>
+<div>
+</div>
+<br/>
+
+    <table class="table table-striped">
+        <thead class="thead_dark">
+            <tr>
+                <th scope="col">Nutricionista</th>
+                <th scope="col">Fecha de la asesoría</th>
+                <th scope="col">Dieta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let appointment of appointments">
+                <tr>
+                    <td>{{ appointment.nutritionist.firstName }} {{ appointment.nutritionist.lastName }}</td>
+                    <td>{{ appointment.appointmentDate }}</td>
+                    <td>
+                        <button type="button" class="btn btn-success" (click)='viewDiet(appointment)'>
+                            Ver Dieta
+                        </button>
+                    </td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table> -->
