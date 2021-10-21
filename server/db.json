@@ -97,5 +97,10 @@
       "email": "correo10@gmail.com",
       "datetime": "01-01-2021"
     }
+  ],
+  "recipes":[
+    { "id": 1, "recipeTitle": "Pollo con jengibre", "ingredients": "2 trozos de pollo...", "preparation": "Empezar preparando...", "calories": 120 },
+    { "id": 2, "recipeTitle": "Sopa Verde", "ingredients": "Espinaca...", "preparation": "Cortar la espinaca...", "calories": 90 },
+    { "id": 3, "recipeTitle": "Ensalada de palta", "ingredients": "3 paltas...", "preparation": "Cortar las paltas...", "calories": 100 }
   ]
 }
