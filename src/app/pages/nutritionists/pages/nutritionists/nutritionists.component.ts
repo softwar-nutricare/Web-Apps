@@ -4,9 +4,8 @@ import {MatTableDataSource} from "@angular/material/table";
 import {NutritionistsService} from "../../services/nutritionists.service";
 import {Nutritionist} from "../../model/nutritionist";
 import {NgForm} from "@angular/forms";
-import * as _ from 'lodash';
 import {MatDialog} from "@angular/material/dialog";
-import {DialogCreateComponent} from "../dialog-create/dialog-create.component";
+import {DialogAddRecipeComponent} from "../../../recipe/pages/dialog-add-recipe/dialog-add-recipe.component";
 
 @Component({
   selector: 'app-nutritionists',
@@ -43,11 +42,6 @@ export class NutritionistsComponent implements OnInit {
     });
   }
 
-  editItem(element: Nutritionist) {
-    this.nutritionistData = _.cloneDeep(element);
-    this.isEditMode = true;
-  }
-
   cancelEdit() {
     this.isEditMode = false;
     this.nutritionistForm.resetForm();
@@ -62,44 +56,9 @@ export class NutritionistsComponent implements OnInit {
     console.log(this.dataSource.data);
   }
 
-  addStudent() {
-    this.nutritionistService.update(this.nutritionistData.id, this.nutritionistData).subscribe((response: any) => {
-      this.dataSource.data = this.dataSource.data.map((o: Nutritionist) => {
-        if (o.id == response.id) {
-          o = response;
-        }
-        return o;
-      });
-      this.cancelEdit();
-    });
-  }
-
-  updateStudent() {
-    this.nutritionistService.update(this.nutritionistData.id, this.nutritionistData).subscribe((response: any) => {
-      this.dataSource.data = this.dataSource.data.map((o: Nutritionist) => {
-        if (o.id === response.id) {
-          o = response;
-        }
-        return o;
-      });
-      this.cancelEdit();
-    });
-  }
-
-  onSubmit() {
-    if (this.nutritionistForm.form.valid) {
-      if (this.isEditMode) {
-        this.updateStudent();
-      } else {
-        this.addStudent();
-      }
-    } else {
-      console.log('Invalid data');
-    }
-  }
 
   openDialog() {
-    let dialogRef = this.dialog.open(DialogCreateComponent);
+    let dialogRef = this.dialog.open(DialogAddRecipeComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
