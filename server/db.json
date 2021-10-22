@@ -180,5 +180,197 @@
       "createdAt": "12-12-12",
       "lastModification": "31-10-21"
     }
+  ],
+  "bills": [
+    {
+      "id": 2,
+      "clientID": 1,
+      "billDate": "01-02-2021",
+      "amount": 80,
+      "ruc": 207852070
+    },
+    {
+      "id": 3,
+      "clientID": 2,
+      "billDate": "05-03-2021",
+      "amount": 85,
+      "ruc": 205419005
+    },
+    {
+      "id": 4,
+      "clientID": 3,
+      "billDate": "25-08-2021",
+      "amount": 50,
+      "ruc": 207832291
+    },
+    {
+      "id": 5,
+      "clientID": 2,
+      "billDate": "29-09-2021",
+      "amount": 70,
+      "ruc": 207382490
+    },
+    {
+      "id": 6,
+      "clientID": 2,
+      "billDate": "18-04-2021",
+      "amount": 70,
+      "ruc": 208648155
+    },
+    {
+      "id": 7,
+      "clientID": 3,
+      "billDate": "25-04-2021",
+      "amount": 50,
+      "ruc": 201900869
+    },
+    {
+      "id": 8,
+      "clientID": 4,
+      "billDate": "18-12-2021",
+      "amount": 90,
+      "ruc": 204044759
+    },
+    {
+      "id": 9,
+      "clientID": "2",
+      "billDate": "rrr",
+      "amount": "45",
+      "ruc": "454545454"
+    }
+  ],
+  "specialties": [
+    {
+      "id": 1,
+      "name": "Nutrición clínica",
+      "institutionName": "National Institute of "
+    },
+    {
+      "id": 2,
+      "name": "Nutrición deportiva",
+      "institutionName": "Institute Good Health"
+    },
+    {
+      "id": 3,
+      "name": "Dietética",
+      "institutionName": "Institute Good Health"
+    },
+    {
+      "id": 4,
+      "name": "Bromatología",
+      "institutionName": "National Institute of Nutrition"
+    },
+    {
+      "id": 5,
+      "name": "Nutrición deportiva",
+      "institutionName": "Institute fitness"
+    },
+    {
+      "id": 6,
+      "name": "Nutrición clínica",
+      "institutionName": "National Institute of Nutrition"
+    },
+    {
+      "id": 7,
+      "name": "Bromatología",
+      "institutionName": "Institute of Child Nutrition"
+    },
+    {
+      "id": 8,
+      "name": "Nutrición clínica",
+      "institutionName": "Institute Good Health"
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "clientId": 1,
+      "nutritionistId": 1,
+      "assignedDietId": 1,
+      "createdAt": "15-01-2021",
+      "appointmentDate": "18-01-2021",
+      "nutritionistNotes": "Necesita comer verduras"
+    },
+    {
+      "id": 2,
+      "clientId": 18,
+      "nutritionistId": 2,
+      "assignedDietId": 9,
+      "createdAt": "15-01-2021",
+      "appointmentDate": "18-01-2021",
+      "nutritionistNotes": "Correr 30 min por dia"
+    },
+    {
+      "id": 3,
+      "clientId": 8,
+      "nutritionistId": 5,
+      "assignedDietId": 7,
+      "createdAt": "17-02-2021",
+      "appointmentDate": "02-03-2021",
+      "nutritionistNotes": "Hacer ejercicios 2 horas al dia"
+    },
+    {
+      "id": 4,
+      "clientId": 4,
+      "nutritionistId": 5,
+      "assignedDietId": 1,
+      "createdAt": "06-08-2021",
+      "appointmentDate": "06-08-2021",
+      "nutritionistNotes": "Necesita comer verduras"
+    },
+    {
+      "id": 5,
+      "clientId": 10,
+      "nutritionistId": 4,
+      "assignedDietId": 6,
+      "createdAt": "25-03-2021",
+      "appointmentDate": "30-03-2021",
+      "nutritionistNotes": "Necesita comer frutas y verduras"
+    },
+    {
+      "id": 6,
+      "clientId": 12,
+      "nutritionistId": 7,
+      "assignedDietId": 15,
+      "createdAt": "27-07-2021",
+      "appointmentDate": "29-07-2021",
+      "nutritionistNotes": "Necesita una dieta de frutas"
+    },
+    {
+      "id": 7,
+      "clientId": 5,
+      "nutritionistId": 4,
+      "assignedDietId": 7,
+      "createdAt": "15-10-2021",
+      "appointmentDate": "18-10-2021",
+      "nutritionistNotes": "Hacer ejercicios 2 horas al dia"
+    },
+    {
+      "id": 8,
+      "clientId": 1,
+      "nutritionistId": 2,
+      "assignedDietId": 15,
+      "createdAt": "15-10-2021",
+      "appointmentDate": "29-10-2021",
+      "nutritionistNotes": "Necesita una dieta de frutas"
+    },
+    {
+      "id": 9,
+      "clientId": 4,
+      "nutritionistId": 3,
+      "assignedDietId": 5,
+      "createdAt": "04-01-2021",
+      "appointmentDate": "05-01-2021",
+      "nutritionistNotes": "Realizar ejercicios 3 veces por semana"
+    },
+    {
+      "id": 10,
+      "clientId": 3,
+      "nutritionistId": 2,
+      "assignedDietId": 3,
+      "createdAt": "02-12-2021",
+      "appointmentDate": "07-12-2021",
+      "nutritionistNotes": "Necesita comer verduras y frutas"
+    }
   ]
 }
