@@ -339,16 +339,19 @@
   ],
   "profesionalProfiles": [
     {
+      "id": 1,
       "experience": "Salud publica",
       "nutricionistId": 1
      
     },
     {
+      "id": 2,
       "experience": "Veterinaria Profesional",
       "nutricionistId": 2
      
     },
     {
+      "id": 3,
       "experience": "Experiencia en medicina natural",
       "nutricionistId": 3
      
