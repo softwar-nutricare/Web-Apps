@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pry-softwar-nutricare-crud": {
+      "hosting": {
+        "nutricare-crud": [
+          "pry-softwar-nutricare-crud"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pry-softwar-nutricare-crud"
+  }
+}
