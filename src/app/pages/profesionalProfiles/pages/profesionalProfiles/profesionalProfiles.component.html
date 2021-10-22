@@ -1,10 +1,9 @@
 <div class="table-wrapper">
-    <h1>ProfesionalProfiles CRUD</h1>
-  
-  
+    <h1>Profesional Profiles CRUD</h1>
+
     <button (click)="clickAddProfesionalProfile()" type="button" class="btn btn-success" data-bs-toggle="modal"
-            data-bs-target="#addProfesionalProfile">Add ProfesionalProfile</button>
-  
+            data-bs-target="#addProfesionalProfile">Add Profesional Profile</button>
+
     <!-- Data Table -->
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <!-- ID Column -->
@@ -17,12 +16,12 @@
         <th mat-header-cell *matHeaderCellDef> Experience </th>
         <td mat-cell *matCellDef="let element"> {{element.experience}} </td>
       </ng-container>
-      <!-- NutricionistId Column -->
-      <ng-container matColumnDef="nutricionistId">
-        <th mat-header-cell *matHeaderCellDef> nutricionistId </th>
-        <td mat-cell *matCellDef="let element"> {{element.nutricionistId}} </td>
+      <!-- NutritionistId Column -->
+      <ng-container matColumnDef="nutritionistId">
+        <th mat-header-cell *matHeaderCellDef> Nutritionist Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.nutritionistId}} </td>
       </ng-container>
-  
+
       <!-- Edit and Delete Column-->
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Actions </th>
@@ -33,17 +32,17 @@
           <a href="javascript:void(0)" (click)="deleteItem(element.id)"><mat-icon>delete</mat-icon></a>
         </td>
       </ng-container>
-  
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns" [ngClass]="{ 'editable-row': profesionalProfileData.id == row.id}"></tr>
     </table>
-  
+
     <!-- Form Add ProfesionalProfile -->
     <div class="modal fade" id="addProfesionalProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title" id="exampleModalLabel">Add a profesionalProfile</h2>
+            <h2 class="modal-title" id="exampleModalLabel">Add a Profesional Profile</h2>
             <button type="button" id="cancel-btn" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <!-- Form Content -->
@@ -55,11 +54,11 @@
                   <input matInput formControlName="experience">
                 </mat-form-field>
               </div>
-  
+
               <div>
                 <mat-form-field appearance="outline">
-                  <mat-label>NutricionistId</mat-label>
-                  <input matInput formControlName="nutricionistId">
+                  <mat-label>Nutritionist Id</mat-label>
+                  <input matInput formControlName="nutritionistId">
                 </mat-form-field>
               </div>
             </form>
@@ -74,7 +73,6 @@
         </div>
       </div>
     </div>
-  
+
     <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
   </div>
-  

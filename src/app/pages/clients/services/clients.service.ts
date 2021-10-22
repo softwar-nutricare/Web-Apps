@@ -39,10 +39,10 @@ export class ClientsService {
         catchError(this.handleError));
   }
 
- 
+
 
   update(id: any, item: any): Observable<Client> {
-    return this.http.post<Client>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
+    return this.http.put<Client>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));
