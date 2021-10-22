@@ -292,24 +292,6 @@
       "nutritionistNotes": "Necesita comer verduras"
     },
     {
-      "id": 2,
-      "clientId": 18,
-      "nutritionistId": 2,
-      "assignedDietId": 9,
-      "createdAt": "15-01-2021",
-      "appointmentDate": "18-01-2021",
-      "nutritionistNotes": "Correr 30 min por dia"
-    },
-    {
-      "id": 3,
-      "clientId": 8,
-      "nutritionistId": 5,
-      "assignedDietId": 7,
-      "createdAt": "17-02-2021",
-      "appointmentDate": "02-03-2021",
-      "nutritionistNotes": "Hacer ejercicios 2 horas al dia"
-    },
-    {
       "id": 4,
       "clientId": 4,
       "nutritionistId": 5,
@@ -317,24 +299,6 @@
       "createdAt": "06-08-2021",
       "appointmentDate": "06-08-2021",
       "nutritionistNotes": "Necesita comer verduras"
-    },
-    {
-      "id": 5,
-      "clientId": 10,
-      "nutritionistId": 4,
-      "assignedDietId": 6,
-      "createdAt": "25-03-2021",
-      "appointmentDate": "30-03-2021",
-      "nutritionistNotes": "Necesita comer frutas y verduras"
-    },
-    {
-      "id": 6,
-      "clientId": 12,
-      "nutritionistId": 7,
-      "assignedDietId": 15,
-      "createdAt": "27-07-2021",
-      "appointmentDate": "29-07-2021",
-      "nutritionistNotes": "Necesita una dieta de frutas"
     },
     {
       "id": 7,

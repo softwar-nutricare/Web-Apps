@@ -10,7 +10,6 @@ import { HeaderComponent } from './pages/header/header.component';
 import {NutritionistsComponent} from "./pages/nutritionists/pages/nutritionists/nutritionists.component";
 import {ClientsComponent} from "./pages/clients/pages/clients/clients.component";
 import {RecipesComponent} from "./pages/recipe/pages/recipe/recipes.component";
-import { DialogAddRecipeComponent } from './pages/recipe/pages/dialog-add-recipe/dialog-add-recipe.component';
 import { DietsComponent } from './pages/diets/pages/diets/diets.component';
 import { RecommendationsComponent } from './pages/recommendations/pages/recommendations/recommendations.component';
 import {BillsComponent} from "./pages/bill/pages/bills/bills.component";
@@ -27,7 +26,6 @@ import { AppointmentsComponent } from './pages/appointments/pages/appointments/a
     NutritionistsComponent,
     ClientsComponent,
     RecipesComponent,
-    DialogAddRecipeComponent,
     DietsComponent,
     RecommendationsComponent,
     BillsComponent,
