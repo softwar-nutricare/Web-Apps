@@ -15,6 +15,7 @@ import { RecommendationsComponent } from './pages/recommendations/pages/recommen
 import {BillsComponent} from "./pages/bill/pages/bills/bills.component";
 import { SpecialtiesComponent } from './pages/specialties/pages/specialties/specialties.component';
 import { AppointmentsComponent } from './pages/appointments/pages/appointments/appointments.component';
+import {PaymentMethodsComponent} from "./pages/paymentMethods/Pages/payment-methods/payment-methods.component";
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { AppointmentsComponent } from './pages/appointments/pages/appointments/a
     RecommendationsComponent,
     BillsComponent,
     SpecialtiesComponent,
-    AppointmentsComponent
+    AppointmentsComponent,
+    PaymentMethodsComponent
   ],
   imports: [
     BrowserModule,

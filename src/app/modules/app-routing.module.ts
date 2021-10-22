@@ -8,6 +8,7 @@ import {RecommendationsComponent} from "../pages/recommendations/pages/recommend
 import {BillsComponent} from "../pages/bill/pages/bills/bills.component";
 import {SpecialtiesComponent} from "../pages/specialties/pages/specialties/specialties.component";
 import {AppointmentsComponent} from "../pages/appointments/pages/appointments/appointments.component";
+import {PaymentMethodsComponent} from "../pages/paymentMethods/Pages/payment-methods/payment-methods.component";
 
 const routes: Routes = [
   { path: 'nutritionists', component: NutritionistsComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'bills', component: BillsComponent },
   { path: 'specialties', component: SpecialtiesComponent },
   { path: 'appointments', component: AppointmentsComponent },
+  { path: 'paymentMethod', component: PaymentMethodsComponent },
   { path: '', redirectTo: 'nutritionists', pathMatch: 'full' }
 ]
 
