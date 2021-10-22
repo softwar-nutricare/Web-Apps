@@ -1,0 +1,116 @@
+<div class="table-wrapper">
+  <h1>Recommendation CRUD</h1>
+
+  <button (click)="clickAddRecommendation()" type="button" class="btn btn-success" data-bs-toggle="modal"
+          data-bs-target="#addRecommendation">Add Recommendation</button>
+
+  <!-- Data Table -->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> #ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+    <!-- Author ID Column -->
+    <ng-container matColumnDef="authorId">
+      <th mat-header-cell *matHeaderCellDef> #Author ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.authorId}} </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+    <!-- Description Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+    <!-- Created At Column -->
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef> Created At </th>
+      <td mat-cell *matCellDef="let element"> {{element.createdAt}} </td>
+    </ng-container>
+    <!-- Last Modification Column -->
+    <ng-container matColumnDef="lastModification">
+      <th mat-header-cell *matHeaderCellDef> Last Modification </th>
+      <td mat-cell *matCellDef="let element"> {{element.lastModification}} </td>
+    </ng-container>
+
+    <!-- Edit and Delete Column-->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <a (click)="onEdit(element)" href="javascript:void(0)" data-bs-toggle="modal"
+           data-bs-target="#addRecommendation"><mat-icon>edit</mat-icon></a>
+        |
+        <a href="javascript:void(0)" (click)="deleteItem(element.id)"><mat-icon>delete</mat-icon></a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns" [ngClass]="{ 'editable-row': recommendationData.id == row.id}"></tr>
+  </table>
+
+  <!-- Form Add Recommendation -->
+  <div class="modal fade" id="addRecommendation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel">Add a nutritionist</h2>
+          <button type="button" id="cancel-btn" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- Form Content -->
+        <div class="modal-body">
+          <form [formGroup]="formValue">
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Author Id</mat-label>
+                <input matInput formControlName="authorId">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <input matInput formControlName="description">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Created At</mat-label>
+                <input matInput formControlName="createdAt">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Last Modification</mat-label>
+                <input matInput formControlName="lastModification">
+              </mat-form-field>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button (click)="cancelEdit()" type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancel">Cancel</button>
+          <button type="button" class="btn btn-primary"
+                  *ngIf="showAdd" (click)="createRecommendationDetails()">Add</button>
+          <button type="button" class="btn btn-primary"
+                  *ngIf="showUpdate" (click)="updateRecommendationDetails()">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

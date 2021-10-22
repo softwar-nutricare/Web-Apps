@@ -1,0 +1,24 @@
+.table-wrapper {
+  width: 1500px;
+  margin: 50px auto;
+}
+
+table {
+  width: 100%;
+}
+
+h1 {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.btn-color {
+  color: white;
+  background-color: #00B376;
+  margin-bottom: 8px;
+}

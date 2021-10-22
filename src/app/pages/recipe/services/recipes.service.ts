@@ -4,6 +4,7 @@ import {Observable, throwError} from "rxjs";
 import { Recipe } from "../model/recipe";
 import {catchError, retry} from "rxjs/operators";
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,8 +26,8 @@ export class RecipesService {
         catchError(this.handleError));
   }
 
-  getById(id: any): Observable<Recipe> {
-    return this.http.get<Recipe>(`${this.basePath}/${id}`, this.httpOptions)
+  getRecipe(id: number): Observable<Recipe> {
+    return this.http.get<Recipe>(`${this.basePath}/${id}`)
       .pipe(
         retry(2),
         catchError(this.handleError));
@@ -39,14 +40,14 @@ export class RecipesService {
         catchError(this.handleError));
   }
 
-  update(id: any, item: any): Observable<Recipe> {
-    return this.http.post<Recipe>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
+  update(item: any , id: number): Observable<Recipe> {
+    return this.http.put<Recipe>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));
   }
 
-  delete(id: any) {
+  delete(id: number) {
     return this.http.delete(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(
         retry(2),

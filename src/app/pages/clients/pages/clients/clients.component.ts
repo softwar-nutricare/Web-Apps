@@ -3,9 +3,8 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatTableDataSource} from "@angular/material/table";
 import {ClientsService} from "../../services/clients.service";
 import {Client} from "../../model/client";
-import {NgForm} from "@angular/forms";
+import {FormBuilder, FormGroup,NgForm} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
-import {DialogCreateClientsComponent} from "../dialog-create-clients/dialog-create-clients.component";
 
 @Component({
   selector: 'app-clients',
@@ -14,8 +13,12 @@ import {DialogCreateClientsComponent} from "../dialog-create-clients/dialog-crea
 })
 export class ClientsComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'username', 'password', 'firstName', 'lastName', 'email', 'cnpNumber', 'datetime', 'actions'];
+  formValue !: FormGroup;
+  clientModelObj: Client = new Client();
+  displayedColumns: string[] = ['id', 'username', 'password', 'firstName', 'lastName', 'email', 'datetime', 'actions'];
   clientData: Client;
+  showAdd!: boolean;
+  showUpdate!: boolean;
 
   @ViewChild(MatPaginator, {static: true})
   paginator!: MatPaginator;
@@ -25,7 +28,8 @@ export class ClientsComponent implements OnInit {
 
   isEditMode = false;
 
-  constructor(private clientService: ClientsService, public dialog: MatDialog) {
+  constructor(private clientService: ClientsService, public dialog: MatDialog,
+    private formbuilder: FormBuilder) {
     this.clientData = {} as Client;
     this.dataSource = new MatTableDataSource<any>();
   }
@@ -33,6 +37,14 @@ export class ClientsComponent implements OnInit {
   // Methods
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
+    this.formValue = this.formbuilder.group({
+      username: [''],
+      password: [''],
+      firstName: [''],
+      lastName: [''],
+      email: [''],
+      datetime: ['']
+    });
     this.getAllClients();
   }
 
@@ -41,15 +53,48 @@ export class ClientsComponent implements OnInit {
       this.dataSource.data = response;
     });
   }
-
-  editItem(element: Client) {
-    /*this.clientData = _.cloneDeep(element);
-    this.isEditMode = true;*/
+  clickAddClient() {
+    this.formValue.reset();
+    this.showAdd = true;
+    this.showUpdate = false;
   }
+  createClientDetails() {
+    this.clientModelObj.username = this.formValue.value.username;
+    this.clientModelObj.password = this.formValue.value.password;
+    this.clientModelObj.firstName = this.formValue.value.firstName;
+    this.clientModelObj.lastName = this.formValue.value.lastName;
+    this.clientModelObj.email = this.formValue.value.email;
+    this.clientModelObj.datetime = this.formValue.value.datetime;
 
-  cancelEdit() {
-    this.isEditMode = false;
-    this.clientForm.resetForm();
+    this.clientService.create(this.clientModelObj).subscribe(response =>{
+        console.log(response);
+        alert('Client Added Successfully')
+        let ref = document.getElementById('cancel')
+        ref?.click();
+        this.formValue.reset();
+        this.getAllClients();
+      },
+      err=> {
+        alert('Something Went Wrong');
+      })
+  };
+
+  updateClientDetails() {
+    this.clientModelObj.username = this.formValue.value.username;
+    this.clientModelObj.password = this.formValue.value.password;
+    this.clientModelObj.firstName = this.formValue.value.firstName;
+    this.clientModelObj.lastName = this.formValue.value.lastName;
+    this.clientModelObj.email = this.formValue.value.email;
+    this.clientModelObj.datetime = this.formValue.value.datetime;
+
+    this.clientService.update(this.clientModelObj, this.clientModelObj.id)
+      .subscribe(response  => {
+        alert("Updated Successfully")
+        let ref = document.getElementById('cancel')
+        ref?.click();
+        this.formValue.reset();
+        this.getAllClients();
+      })
   }
 
   deleteItem(id: number) {
@@ -61,48 +106,22 @@ export class ClientsComponent implements OnInit {
     console.log(this.dataSource.data);
   }
 
-  addStudent() {
-    this.clientService.update(this.clientData.id, this.clientData).subscribe((response: any) => {
-      this.dataSource.data = this.dataSource.data.map((o: Client) => {
-        if (o.id == response.id) {
-          o = response;
-        }
-        return o;
-      });
-      this.cancelEdit();
-    });
+  cancelEdit() {
+    this.isEditMode = false;
+    this.clientForm.resetForm();
   }
 
-  updateStudent() {
-    this.clientService.update(this.clientData.id, this.clientData).subscribe((response: any) => {
-      this.dataSource.data = this.dataSource.data.map((o: Client) => {
-        if (o.id === response.id) {
-          o = response;
-        }
-        return o;
-      });
-      this.cancelEdit();
-    });
-  }
+  onEdit(item: any) {
+    this.showAdd = false;
+    this.showUpdate = true;
 
-  onSubmit() {
-    if (this.clientForm.form.valid) {
-      if (this.isEditMode) {
-        this.updateStudent();
-      } else {
-        this.addStudent();
-      }
-    } else {
-      console.log('Invalid data');
-    }
-  }
-
-  openDialog() {
-    let dialogRef = this.dialog.open(DialogCreateClientsComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.clientModelObj.id = item.id;
+    this.formValue.controls['username'].setValue(item.username);
+    this.formValue.controls['password'].setValue(item.password);
+    this.formValue.controls['firstName'].setValue(item.firstName);
+    this.formValue.controls['lastName'].setValue(item.lastName);
+    this.formValue.controls['email'].setValue(item.email);
+    this.formValue.controls['datetime'].setValue(item.datetime);
   }
 
 }

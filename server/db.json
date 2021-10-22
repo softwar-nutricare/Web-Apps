@@ -120,5 +120,274 @@
       "preparation": "Cortar las paltas...",
       "calories": 100
     }
+  ],
+  "diets": [
+    {
+      "id": 1,
+      "name": "Dieta básica 1",
+      "description": "La dieta consiste en...",
+      "createdAt": "10-12-19"
+    },
+    {
+      "id": 2,
+      "name": "Dieta básica 2",
+      "description": "Consiste de los alimentos...",
+      "createdAt": "11-09-21"
+    },
+    {
+      "id": 3,
+      "name": "Dieta para bajar de peso",
+      "description": "Se presenta en su mayoría ensaladas...",
+      "createdAt": "11-10-20"
+    },
+    {
+      "id": 4,
+      "name": "Dieta básica 4",
+      "description": "Dieta para quienes...",
+      "createdAt": "01-03-21"
+    }
+  ],
+  "recommendations": [
+    {
+      "id": 1,
+      "authorId": 3,
+      "name": "How to avoid distraction",
+      "description": "Distraction is a mayor obstacle...",
+      "createdAt": "10-12-19",
+      "lastModification": "23-01-20"
+    },
+    {
+      "id": 2,
+      "authorId": 1,
+      "name": "Happiness",
+      "description": "Happiness may not be easy to achieve, but this can help you to...",
+      "createdAt": "11-10-19",
+      "lastModification": "31-01-21"
+    },
+    {
+      "id": 3,
+      "authorId": 4,
+      "name": "Meditate in 5 minutes",
+      "description": "It is possible to meditate in a short period of time...",
+      "createdAt": "19-11-19",
+      "lastModification": "12-06-20"
+    },
+    {
+      "id": 4,
+      "authorId": "6",
+      "name": "12",
+      "description": "dddddd",
+      "createdAt": "12-12-12",
+      "lastModification": "31-10-21"
+    }
+  ],
+  "bills": [
+    {
+      "id": 2,
+      "clientID": 1,
+      "billDate": "01-02-2021",
+      "amount": 80,
+      "ruc": 207852070
+    },
+    {
+      "id": 3,
+      "clientID": 2,
+      "billDate": "05-03-2021",
+      "amount": 85,
+      "ruc": 205419005
+    },
+    {
+      "id": 4,
+      "clientID": 3,
+      "billDate": "25-08-2021",
+      "amount": 50,
+      "ruc": 207832291
+    },
+    {
+      "id": 5,
+      "clientID": 2,
+      "billDate": "29-09-2021",
+      "amount": 70,
+      "ruc": 207382490
+    },
+    {
+      "id": 6,
+      "clientID": 2,
+      "billDate": "18-04-2021",
+      "amount": 70,
+      "ruc": 208648155
+    },
+    {
+      "id": 7,
+      "clientID": 3,
+      "billDate": "25-04-2021",
+      "amount": 50,
+      "ruc": 201900869
+    },
+    {
+      "id": 8,
+      "clientID": 4,
+      "billDate": "18-12-2021",
+      "amount": 90,
+      "ruc": 204044759
+    },
+    {
+      "id": 9,
+      "clientID": "2",
+      "billDate": "rrr",
+      "amount": "45",
+      "ruc": "454545454"
+    }
+  ],
+  "specialties": [
+    {
+      "id": 1,
+      "name": "Nutrición clínica",
+      "institutionName": "National Institute of "
+    },
+    {
+      "id": 2,
+      "name": "Nutrición deportiva",
+      "institutionName": "Institute Good Health"
+    },
+    {
+      "id": 3,
+      "name": "Dietética",
+      "institutionName": "Institute Good Health"
+    },
+    {
+      "id": 4,
+      "name": "Bromatología",
+      "institutionName": "National Institute of Nutrition"
+    },
+    {
+      "id": 5,
+      "name": "Nutrición deportiva",
+      "institutionName": "Institute fitness"
+    },
+    {
+      "id": 6,
+      "name": "Nutrición clínica",
+      "institutionName": "National Institute of Nutrition"
+    },
+    {
+      "id": 7,
+      "name": "Bromatología",
+      "institutionName": "Institute of Child Nutrition"
+    },
+    {
+      "id": 8,
+      "name": "Nutrición clínica",
+      "institutionName": "Institute Good Health"
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "clientId": 1,
+      "nutritionistId": 1,
+      "assignedDietId": 1,
+      "createdAt": "15-01-2021",
+      "appointmentDate": "18-01-2021",
+      "nutritionistNotes": "Necesita comer verduras"
+    },
+    {
+      "id": 4,
+      "clientId": 4,
+      "nutritionistId": 5,
+      "assignedDietId": 1,
+      "createdAt": "06-08-2021",
+      "appointmentDate": "06-08-2021",
+      "nutritionistNotes": "Necesita comer verduras"
+    },
+    {
+      "id": 7,
+      "clientId": 5,
+      "nutritionistId": 4,
+      "assignedDietId": 7,
+      "createdAt": "15-10-2021",
+      "appointmentDate": "18-10-2021",
+      "nutritionistNotes": "Hacer ejercicios 2 horas al dia"
+    },
+    {
+      "id": 8,
+      "clientId": 1,
+      "nutritionistId": 2,
+      "assignedDietId": 15,
+      "createdAt": "15-10-2021",
+      "appointmentDate": "29-10-2021",
+      "nutritionistNotes": "Necesita una dieta de frutas"
+    },
+    {
+      "id": 9,
+      "clientId": 4,
+      "nutritionistId": 3,
+      "assignedDietId": 5,
+      "createdAt": "04-01-2021",
+      "appointmentDate": "05-01-2021",
+      "nutritionistNotes": "Realizar ejercicios 3 veces por semana"
+    },
+    {
+      "id": 10,
+      "clientId": 3,
+      "nutritionistId": 2,
+      "assignedDietId": 3,
+      "createdAt": "02-12-2021",
+      "appointmentDate": "07-12-2021",
+      "nutritionistNotes": "Necesita comer verduras y frutas"
+    }
+  ],
+  "PaymentMethod": [
+    {
+      "id":  1,
+      "patientId":  265,
+      "cardNumber": 512355,
+      "cartType":"Debito",
+      "expirationDateMonth": 7,
+      "expirationDateYear": 2026,
+      "securityCode":825,
+      "ownerFirstName":"Armando",
+      "ownerLastName": "Casas",
+      "city": "Lima",
+      "billingAddress":"Av. 28 de Julio 878",
+      "billingAddressLine2":"none",
+      "postalCode":"15046",
+      "country":"Peru",
+      "phoneNumber": 998565987
+    },
+    {
+      "id":  2,
+      "patientId":  270,
+      "cardNumber": 552355,
+      "cartType":"Credito",
+      "expirationDateMonth": 12,
+      "expirationDateYear": 2024,
+      "securityCode":400,
+      "ownerFirstName":"Zacarias",
+      "ownerLastName": "Flores",
+      "city": "Lima",
+      "billingAddress":"Los Cedros 209",
+      "billingAddressLine2":"none",
+      "postalCode":"15036",
+      "country":"Peru",
+      "phoneNumber": 996487587
+    },
+    {
+      "id":  3,
+      "patientId":  288,
+      "cardNumber": 555915,
+      "cartType":"Credito",
+      "expirationDateMonth": 4,
+      "expirationDateYear": 2026,
+      "securityCode":245,
+      "ownerFirstName":"Rodrigo",
+      "ownerLastName": "Cuba",
+      "city": "Lima",
+      "billingAddress":"Av. Salaverry 801 ",
+      "billingAddressLine2":"none",
+      "postalCode":"13611",
+      "country":"Peru",
+      "phoneNumber": 996499587
+    }
   ]
 }

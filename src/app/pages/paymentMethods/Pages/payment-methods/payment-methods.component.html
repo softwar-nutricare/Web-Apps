@@ -1,0 +1,228 @@
+<div class="table-wrapper">
+  <h1>PaymentMethod CRUD</h1>
+
+
+  <button (click)="clickAddPaymentMethod()" type="button" class="btn btn-success" data-bs-toggle="modal"
+          data-bs-target="#addPaymentMethod">Add PaymentMethod</button>
+
+  <!-- Data Table -->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> #ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+    <!-- Patient Id Column -->
+    <ng-container matColumnDef="patientId">
+      <th mat-header-cell *matHeaderCellDef> Patient Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.patientId}} </td>
+    </ng-container>
+    <!-- Card Number Column -->
+    <ng-container matColumnDef="cardNumber">
+      <th mat-header-cell *matHeaderCellDef> Card Number </th>
+      <td mat-cell *matCellDef="let element"> {{element.cardNumber}} </td>
+    </ng-container>
+    <!-- Cart Type Column -->
+    <ng-container matColumnDef="cartType">
+      <th mat-header-cell *matHeaderCellDef> Cart Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.cartType}} </td>
+    </ng-container>
+    <!-- Last Name Column -->
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> Last Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    </ng-container>
+    <!-- Expiration Date Month Column -->
+    <ng-container matColumnDef="expirationDateMonth">
+      <th mat-header-cell *matHeaderCellDef> Expiration Date Month </th>
+      <td mat-cell *matCellDef="let element"> {{element.expirationDateMonth}} </td>
+    </ng-container>
+    <!-- Expiration Date Year Column -->
+    <ng-container matColumnDef="expirationDateYear">
+      <th mat-header-cell *matHeaderCellDef> Expiration Date Year </th>
+      <td mat-cell *matCellDef="let element"> {{element.expirationDateYear}} </td>
+    </ng-container>
+    <!-- Security Code Column -->
+    <ng-container matColumnDef="securityCode">
+      <th mat-header-cell *matHeaderCellDef> Security Code </th>
+      <td mat-cell *matCellDef="let element"> {{element.securityCode}} </td>
+    </ng-container>
+    <!-- Owner First Name Column -->
+    <ng-container matColumnDef="ownerFirstName">
+      <th mat-header-cell *matHeaderCellDef> Owner First Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.ownerFirstName}} </td>
+    </ng-container>
+    <!-- Owner Last Name Column -->
+    <ng-container matColumnDef="ownerLastName">
+      <th mat-header-cell *matHeaderCellDef> Owner Last Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.ownerLastName}} </td>
+    </ng-container>
+    <!-- City Column -->
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef> City </th>
+      <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+    </ng-container>
+    <!-- Billing Address Column -->
+    <ng-container matColumnDef="billingAddress">
+      <th mat-header-cell *matHeaderCellDef> Billing Address </th>
+      <td mat-cell *matCellDef="let element"> {{element.billingAddress}} </td>
+    </ng-container>
+    <!-- Billing Address Line2 Column -->
+    <ng-container matColumnDef="billingAddressLine2">
+      <th mat-header-cell *matHeaderCellDef> Billing Address Line2 </th>
+      <td mat-cell *matCellDef="let element"> {{element.billingAddressLine2}} </td>
+    </ng-container>
+    <!-- Postal Code Column -->
+    <ng-container matColumnDef="postalCode">
+      <th mat-header-cell *matHeaderCellDef> Postal Code </th>
+      <td mat-cell *matCellDef="let element"> {{element.postalCode}} </td>
+    </ng-container>
+    <!-- Country Column -->
+    <ng-container matColumnDef="country">
+      <th mat-header-cell *matHeaderCellDef> Country </th>
+      <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+    </ng-container>
+    <!-- Phone Number Column -->
+    <ng-container matColumnDef="phoneNumber">
+      <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+      <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+    </ng-container>
+
+    <!-- Edit and Delete Column-->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <a (click)="onEdit(element)" href="javascript:void(0)" data-bs-toggle="modal"
+           data-bs-target="#addPaymentMethod"><mat-icon>edit</mat-icon></a>
+        |
+        <a href="javascript:void(0)" (click)="deleteItem(element.id)"><mat-icon>delete</mat-icon></a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns" [ngClass]="{ 'editable-row': paymentMethodData.id == row.id}"></tr>
+  </table>
+
+  <!-- Form Add Nutritionist -->
+  <div class="modal fade" id="addPaymentMethod" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel">Add a payment method</h2>
+          <button type="button" id="cancel-btn" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- Form Content -->
+        <div class="modal-body">
+          <form [formGroup]="formValue">
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Patient Id</mat-label>
+                <input matInput formControlName="patientId">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Card Number</mat-label>
+                <input matInput formControlName="cardNumber">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Cart Type</mat-label>
+                <input matInput formControlName="cartType">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Expiration Date Month</mat-label>
+                <input matInput formControlName="expirationDateMonth">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Expiration Date Year</mat-label>
+                <input matInput formControlName="expirationDateYear">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Security Code</mat-label>
+                <input matInput formControlName="securityCode">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Owner First Name</mat-label>
+                <input matInput formControlName="ownerFirstName">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Owner Last Name</mat-label>
+                <input matInput formControlName="ownerLastName">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>City</mat-label>
+                <input matInput formControlName="city">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Billing Address</mat-label>
+                <input matInput formControlName="billingAddress">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Billing Address Line2</mat-label>
+                <input matInput formControlName="billingAddressLine2">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Postal Code</mat-label>
+                <input matInput formControlName="postalCode">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Country</mat-label>
+                <input matInput formControlName="country">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Phone Number</mat-label>
+                <input matInput formControlName="phoneNumber">
+              </mat-form-field>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button (click)="cancelEdit()" type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancel">Cancel</button>
+          <button type="button" class="btn btn-primary"
+                  *ngIf="showAdd" (click)="createPaymentMethodDetails()">Add</button>
+          <button type="button" class="btn btn-primary"
+                  *ngIf="showUpdate" (click)="updatePaymentMethodDetails()">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

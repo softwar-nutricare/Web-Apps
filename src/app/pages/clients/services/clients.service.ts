@@ -25,8 +25,8 @@ export class ClientsService {
         catchError(this.handleError));
   }
 
-  getById(id: any): Observable<Client> {
-    return this.http.get<Client>(`${this.basePath}/${id}`, this.httpOptions)
+  getClient(id: number): Observable<Client> {
+    return this.http.get<Client>(`${this.basePath}/${id}`)
       .pipe(
         retry(2),
         catchError(this.handleError));
@@ -39,6 +39,8 @@ export class ClientsService {
         catchError(this.handleError));
   }
 
+ 
+
   update(id: any, item: any): Observable<Client> {
     return this.http.post<Client>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(
@@ -46,7 +48,7 @@ export class ClientsService {
         catchError(this.handleError));
   }
 
-  delete(id: any) {
+  delete(id: number) {
     return this.http.delete(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(
         retry(2),

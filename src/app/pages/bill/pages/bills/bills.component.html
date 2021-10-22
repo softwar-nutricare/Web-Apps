@@ -1,0 +1,103 @@
+<div class="table-wrapper">
+  <h1>Bills CRUD</h1>
+
+  <button (click)="clickAddBill()" type="button" class="btn btn-success" data-bs-toggle="modal"
+          data-bs-target="#addBill">Add Bill</button>
+
+  <!-- Data Table -->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> #ID </th>
+      <td mat-cell *matCellDef="let elementBill"> {{elementBill.id}} </td>
+    </ng-container>
+    <!-- Client ID Column -->
+    <ng-container matColumnDef="clientID">
+      <th mat-header-cell *matHeaderCellDef> Client ID </th>
+      <td mat-cell *matCellDef="let elementBill"> {{elementBill.clientID}} </td>
+    </ng-container>
+    <!-- Bill Date Column -->
+    <ng-container matColumnDef="billDate">
+      <th mat-header-cell *matHeaderCellDef> Bill Date </th>
+      <td mat-cell *matCellDef="let elementBill"> {{elementBill.billDate}} </td>
+    </ng-container>
+    <!-- Amount Column -->
+    <ng-container matColumnDef="amount">
+      <th mat-header-cell *matHeaderCellDef> Amount </th>
+      <td mat-cell *matCellDef="let elementBill"> {{elementBill.amount}} </td>
+    </ng-container>
+    <!-- Ruc Column -->
+    <ng-container matColumnDef="ruc">
+      <th mat-header-cell *matHeaderCellDef> R.U.C. </th>
+      <td mat-cell *matCellDef="let elementBill"> {{elementBill.ruc}} </td>
+    </ng-container>
+
+    <!-- Edit and Delete Column-->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <a (click)="onEdit(element)" href="javascript:void(0)" data-bs-toggle="modal"
+           data-bs-target="#addBill"><mat-icon>edit</mat-icon></a>
+        |
+        <a href="javascript:void(0)" (click)="deleteItem(element.id)"><mat-icon>delete</mat-icon></a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsBill"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsBill" [ngClass]="{ 'editable-row': billData.id == row.id}"></tr>
+  </table>
+
+  <!-- Form Add Bill -->
+  <div class="modal fade" id="addBill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel">Add a Bill</h2>
+          <button type="button" id="cancel-btn" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- Form Content -->
+        <div class="modal-body">
+          <form [formGroup]="formValue">
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Client ID</mat-label>
+                <input matInput formControlName="clientID">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Bill Date</mat-label>
+                <input matInput formControlName="billDate">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Amount</mat-label>
+                <input matInput formControlName="amount">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>R.U.C.</mat-label>
+                <input matInput formControlName="ruc">
+              </mat-form-field>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button (click)="cancelEdit()" type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancel">Cancel</button>
+          <button type="button" class="btn btn-primary"
+                  *ngIf="showAdd" (click)="createBillDetails()">Add</button>
+          <button type="button" class="btn btn-primary"
+                  *ngIf="showUpdate" (click)="updateBillDetails()">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
