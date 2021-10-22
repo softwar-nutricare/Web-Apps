@@ -120,5 +120,65 @@
       "preparation": "Cortar las paltas...",
       "calories": 100
     }
+  ],
+  "diets": [
+    {
+      "id": 1,
+      "name": "Dieta básica 1",
+      "description": "La dieta consiste en...",
+      "createdAt": "10-12-19"
+    },
+    {
+      "id": 2,
+      "name": "Dieta básica 2",
+      "description": "Consiste de los alimentos...",
+      "createdAt": "11-09-21"
+    },
+    {
+      "id": 3,
+      "name": "Dieta para bajar de peso",
+      "description": "Se presenta en su mayoría ensaladas...",
+      "createdAt": "11-10-20"
+    },
+    {
+      "id": 4,
+      "name": "Dieta básica 4",
+      "description": "Dieta para quienes...",
+      "createdAt": "01-03-21"
+    }
+  ],
+  "recommendations": [
+    {
+      "id": 1,
+      "authorId": 3,
+      "name": "How to avoid distraction",
+      "description": "Distraction is a mayor obstacle...",
+      "createdAt": "10-12-19",
+      "lastModification": "23-01-20"
+    },
+    {
+      "id": 2,
+      "authorId": 1,
+      "name": "Happiness",
+      "description": "Happiness may not be easy to achieve, but this can help you to...",
+      "createdAt": "11-10-19",
+      "lastModification": "31-01-21"
+    },
+    {
+      "id": 3,
+      "authorId": 4,
+      "name": "Meditate in 5 minutes",
+      "description": "It is possible to meditate in a short period of time...",
+      "createdAt": "19-11-19",
+      "lastModification": "12-06-20"
+    },
+    {
+      "id": 4,
+      "authorId": "6",
+      "name": "12",
+      "description": "dddddd",
+      "createdAt": "12-12-12",
+      "lastModification": "31-10-21"
+    }
   ]
 }
