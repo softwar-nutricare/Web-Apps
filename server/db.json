@@ -49,6 +49,16 @@
       "email": "mark.99@gmail.com",
       "cnpNumber": "23452345",
       "datetime": "12-12-12"
+    },
+    {
+      "id": 6,
+      "username": "user1111",
+      "password": "3333",
+      "firstName": "Leandro",
+      "lastName": "Salazar",
+      "email": "leando@gmail.com",
+      "cnpNumber": "220039",
+      "datetime": "12/12/12"
     }
   ],
   "clients": [
@@ -96,6 +106,15 @@
       "lastName": "Dias",
       "email": "correo10@gmail.com",
       "datetime": "01-01-2021"
+    },
+    {
+      "id": 7,
+      "username": "12121",
+      "password": "1212",
+      "firstName": "1212",
+      "lastName": "1212",
+      "email": "1212",
+      "datetime": "1212"
     }
   ],
   "recipes": [
@@ -119,6 +138,13 @@
       "ingredients": "3 paltas...",
       "preparation": "Cortar las paltas...",
       "calories": 100
+    },
+    {
+      "id": 4,
+      "recipeTitle": "Tallarin saltado...",
+      "ingredients": "cebolla, carne, ....",
+      "preparation": "Cortar la carne...",
+      "calories": "210"
     }
   ],
   "diets": [
@@ -145,6 +171,12 @@
       "name": "Dieta básica 4",
       "description": "Dieta para quienes...",
       "createdAt": "01-03-21"
+    },
+    {
+      "id": 5,
+      "name": "name1111",
+      "description": "description1111",
+      "createdAt": "12-12-12"
     }
   ],
   "recommendations": [
@@ -173,12 +205,12 @@
       "lastModification": "12-06-20"
     },
     {
-      "id": 4,
-      "authorId": "6",
-      "name": "12",
-      "description": "dddddd",
-      "createdAt": "12-12-12",
-      "lastModification": "31-10-21"
+      "id": 5,
+      "authorId": "1111",
+      "name": "111",
+      "description": "111222",
+      "createdAt": "111",
+      "lastModification": "111"
     }
   ],
   "bills": [
@@ -211,13 +243,6 @@
       "ruc": 207382490
     },
     {
-      "id": 6,
-      "clientID": 2,
-      "billDate": "18-04-2021",
-      "amount": 70,
-      "ruc": 208648155
-    },
-    {
       "id": 7,
       "clientID": 3,
       "billDate": "25-04-2021",
@@ -233,10 +258,10 @@
     },
     {
       "id": 9,
-      "clientID": "2",
-      "billDate": "rrr",
-      "amount": "45",
-      "ruc": "454545454"
+      "clientID": "1111",
+      "billDate": "1111",
+      "amount": "111",
+      "ruc": "111"
     }
   ],
   "specialties": [
@@ -262,8 +287,8 @@
     },
     {
       "id": 5,
-      "name": "Nutrición deportiva",
-      "institutionName": "Institute fitness"
+      "name": "Nutrición deportiva 1",
+      "institutionName": "Institute fitness 4"
     },
     {
       "id": 6,
@@ -271,14 +296,14 @@
       "institutionName": "National Institute of Nutrition"
     },
     {
-      "id": 7,
-      "name": "Bromatología",
-      "institutionName": "Institute of Child Nutrition"
-    },
-    {
       "id": 8,
       "name": "Nutrición clínica",
       "institutionName": "Institute Good Health"
+    },
+    {
+      "id": 9,
+      "name": "name2",
+      "institutionName": "inst"
     }
   ],
   "appointments": [
@@ -340,21 +365,23 @@
   "profesionalProfiles": [
     {
       "id": 1,
-      "experience": "Salud publica",
-      "nutricionistId": 1
+      "experience": "Veterinaria Profesional",
+      "nutritionistId": "5"
     },
     {
       "id": 2,
       "experience": "Veterinaria Profesional",
-      "nutricionistId": 2
+      "nutritionistId": 2
     },
     {
       "id": 3,
       "experience": "Experiencia en medicina natural",
-      "nutricionistId": 3
+      "nutritionistId": 3
     },
     {
-      "id": 4
+      "id": 4,
+      "experience": "222",
+      "nutritionistId": "2222"
     }
   ],
   "PaymentMethod": [
@@ -394,9 +421,9 @@
     },
     {
       "id": 3,
-      "patientId": 288,
-      "cardNumber": 555915,
-      "cartType": "Credito",
+      "patientId": "4444",
+      "cardNumber": "992834",
+      "cartType": "Credito222",
       "expirationDateMonth": 4,
       "expirationDateYear": 2026,
       "securityCode": 245,

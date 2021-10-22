@@ -15,7 +15,7 @@ export class ProfesionalProfilesComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   formValue !: FormGroup;
   profesionalProfileModelObj: ProfesionalProfile = new ProfesionalProfile();
-  displayedColumns: string[] = ['id',  'experience', 'nutricionistId',  'actions'];
+  displayedColumns: string[] = ['id', 'experience', 'nutritionistId', 'actions'];
   profesionalProfileData: ProfesionalProfile;
   showAdd!: boolean;
   showUpdate!: boolean;
@@ -39,8 +39,7 @@ export class ProfesionalProfilesComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.formValue = this.formbuilder.group({
       experience: [''],
-      nutricionistId: [''],
-   
+      nutritionistId: []
     });
     this.getAllProfesionalProfiles();
   }
@@ -59,13 +58,11 @@ export class ProfesionalProfilesComponent implements OnInit {
 
   createProfesionalProfileDetails() {
     this.profesionalProfileModelObj.experience = this.formValue.value.experience;
-    this.profesionalProfileModelObj.nutricionistId = this.formValue.value.nutricionistId;
-    
-    
+    this.profesionalProfileModelObj.nutritionistId = this.formValue.value.nutritionistId;
 
     this.profesionalProfileService.create(this.profesionalProfileModelObj).subscribe(response =>{
         console.log(response);
-        alert('ProfesionalProfile Added Successfully')
+        alert('Profesional Profile Added Successfully')
         let ref = document.getElementById('cancel')
         ref?.click();
         this.formValue.reset();
@@ -77,10 +74,8 @@ export class ProfesionalProfilesComponent implements OnInit {
   };
 
   updateProfesionalProfileDetails() {
-    this.profesionalProfileModelObj.experience = this.formValue.value.username;
-    this.profesionalProfileModelObj.nutricionistId = this.formValue.value.password;
-  
-   
+    this.profesionalProfileModelObj.experience = this.formValue.value.experience;
+    this.profesionalProfileModelObj.nutritionistId = this.formValue.value.nutritionistId;
 
     this.profesionalProfileService.update(this.profesionalProfileModelObj, this.profesionalProfileModelObj.id)
       .subscribe(response  => {
@@ -112,9 +107,7 @@ export class ProfesionalProfilesComponent implements OnInit {
 
     this.profesionalProfileModelObj.id = item.id;
     this.formValue.controls['experience'].setValue(item.experience);
-    this.formValue.controls['nutricionistId'].setValue(item.nutricionistId);
-   
-   
+    this.formValue.controls['nutritionistId'].setValue(item.nutritionistId);
   }
 
 }

@@ -62,7 +62,7 @@ export class SpecialtiesComponent implements OnInit {
 
     this.specialtyService.create(this.specialtyModelObj).subscribe(response =>{
         console.log(response);
-        alert('Nutritionist Added Successfully')
+        alert('Speciality Added Successfully')
         let ref = document.getElementById('cancel')
         ref?.click();
         this.formValue.reset();

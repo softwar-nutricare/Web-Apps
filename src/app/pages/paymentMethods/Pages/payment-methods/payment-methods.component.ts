@@ -85,7 +85,7 @@ export class PaymentMethodsComponent implements OnInit {
 
     this.paymentMethodService.create(this.paymentMethodModelObj).subscribe(response =>{
         console.log(response);
-        alert('Nutritionist Added Successfully')
+        alert('Payment Method Added Successfully')
         let ref = document.getElementById('cancel')
         ref?.click();
         this.formValue.reset();
