@@ -4,6 +4,7 @@ import {Observable, throwError} from "rxjs";
 import {catchError, retry} from "rxjs/operators";
 import { Bill } from "../model/bill";
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,8 +26,8 @@ export class BillsService {
         catchError(this.handleError));
   }
 
-  getById(id: any): Observable<Bill> {
-    return this.http.get<Bill>(`${this.basePath}/${id}`, this.httpOptions)
+  getBill(id: number): Observable<Bill> {
+    return this.http.get<Bill>(`${this.basePath}/${id}`)
       .pipe(
         retry(2),
         catchError(this.handleError));
@@ -39,14 +40,14 @@ export class BillsService {
         catchError(this.handleError));
   }
 
-  update(id: any, item: any): Observable<Bill> {
+  update(item: any, id: number): Observable<Bill> {
     return this.http.put<Bill>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));
   }
 
-  delete(id: any) {
+  delete(id: number) {
     return this.http.delete(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(
         retry(2),
