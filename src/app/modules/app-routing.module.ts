@@ -5,6 +5,9 @@ import { ClientsComponent } from '../pages/clients/pages/clients/clients.compone
 import {RecipesComponent} from "../pages/recipe/pages/recipe/recipes.component";
 import {DietsComponent} from "../pages/diets/pages/diets/diets.component";
 import {RecommendationsComponent} from "../pages/recommendations/pages/recommendations/recommendations.component";
+import {BillsComponent} from "../pages/bill/pages/bills/bills.component";
+import {SpecialtiesComponent} from "../pages/specialties/pages/specialties/specialties.component";
+import {AppointmentsComponent} from "../pages/appointments/pages/appointments/appointments.component";
 
 const routes: Routes = [
   { path: 'nutritionists', component: NutritionistsComponent },
@@ -12,6 +15,9 @@ const routes: Routes = [
   { path: 'recipes', component: RecipesComponent },
   { path: 'diets', component: DietsComponent },
   { path: 'recommendations', component: RecommendationsComponent },
+  { path: 'bills', component: BillsComponent },
+  { path: 'specialties', component: SpecialtiesComponent },
+  { path: 'appointments', component: AppointmentsComponent },
   { path: '', redirectTo: 'nutritionists', pathMatch: 'full' }
 ]
 

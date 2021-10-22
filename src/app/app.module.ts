@@ -15,6 +15,9 @@ import {RecipesComponent} from "./pages/recipe/pages/recipe/recipes.component";
 import { DialogAddRecipeComponent } from './pages/recipe/pages/dialog-add-recipe/dialog-add-recipe.component';
 import { DietsComponent } from './pages/diets/pages/diets/diets.component';
 import { RecommendationsComponent } from './pages/recommendations/pages/recommendations/recommendations.component';
+import {BillsComponent} from "./pages/bill/pages/bills/bills.component";
+import { SpecialtiesComponent } from './pages/specialties/pages/specialties/specialties.component';
+import { AppointmentsComponent } from './pages/appointments/pages/appointments/appointments.component';
 
 
 @NgModule({
@@ -31,6 +34,9 @@ import { RecommendationsComponent } from './pages/recommendations/pages/recommen
     DialogAddRecipeComponent,
     DietsComponent,
     RecommendationsComponent,
+    BillsComponent,
+    SpecialtiesComponent,
+    AppointmentsComponent
   ],
   imports: [
     BrowserModule,
