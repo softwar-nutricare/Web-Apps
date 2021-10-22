@@ -1,7 +1,9 @@
 <div class="table-wrapper">
   <h1>Recipes CRUD</h1>
 
-  <button class="spacer btn-color" mat-raised-button (click)="openDialog()">Add</button>
+
+  <button (click)="clickAddRecipe()" type="button" class="btn btn-success" data-bs-toggle="modal"
+          data-bs-target="#addRecipe">Add Recipe</button>
 
   <!-- Data Table -->
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -10,26 +12,22 @@
       <th mat-header-cell *matHeaderCellDef> #ID </th>
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
-
-    <!-- Username Column -->
+    <!-- Recipe Column -->
     <ng-container matColumnDef="recipeTitle">
       <th mat-header-cell *matHeaderCellDef> Recipe Title </th>
       <td mat-cell *matCellDef="let element"> {{element.recipeTitle}} </td>
     </ng-container>
-
-    <!-- Password Column -->
+    <!-- Ingredients Column -->
     <ng-container matColumnDef="ingredients">
       <th mat-header-cell *matHeaderCellDef> Ingredients </th>
       <td mat-cell *matCellDef="let element"> {{element.ingredients}} </td>
     </ng-container>
-
-    <!-- First Name Column -->
+    <!-- Preparation Name Column -->
     <ng-container matColumnDef="preparation">
       <th mat-header-cell *matHeaderCellDef> Preparation </th>
       <td mat-cell *matCellDef="let element"> {{element.preparation}} </td>
     </ng-container>
-
-    <!-- Last Name Column -->
+    <!-- Calories Column -->
     <ng-container matColumnDef="calories">
       <th mat-header-cell *matHeaderCellDef> Calories </th>
       <td mat-cell *matCellDef="let element"> {{element.calories}} </td>
@@ -39,7 +37,8 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Actions </th>
       <td mat-cell *matCellDef="let element">
-        <a href="javascript:void(0)" (click)="openDialog()"><mat-icon>edit</mat-icon></a>
+        <a (click)="onEdit(element)" href="javascript:void(0)" data-bs-toggle="modal"
+           data-bs-target="#addRecipe"><mat-icon>edit</mat-icon></a>
         |
         <a href="javascript:void(0)" (click)="deleteItem(element.id)"><mat-icon>delete</mat-icon></a>
       </td>
@@ -50,6 +49,55 @@
   </table>
 
   <!-- Form Add Nutritionist -->
+  <div class="modal fade" id="addRecipe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel">Add a Recipe</h2>
+          <button type="button" id="cancel-btn" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- Form Content -->
+        <div class="modal-body">
+          <form [formGroup]="formValue">
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Recipe Title</mat-label>
+                <input matInput formControlName="recipeTitle">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Ingredients</mat-label>
+                <input matInput formControlName="ingredients">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Preparation</mat-label>
+                <input matInput formControlName="preparation">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Calories</mat-label>
+                <input matInput formControlName="calories">
+              </mat-form-field>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button (click)="cancelEdit()" type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancel">Cancel</button>
+          <button type="button" class="btn btn-primary"
+                  *ngIf="showAdd" (click)="createRecipeDetails()">Add</button>
+          <button type="button" class="btn btn-primary"
+                  *ngIf="showUpdate" (click)="updateRecipeDetails()">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
