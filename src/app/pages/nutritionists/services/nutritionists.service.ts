@@ -25,8 +25,8 @@ export class NutritionistsService {
         catchError(this.handleError));
   }
 
-  getById(id: any): Observable<Nutritionist> {
-    return this.http.get<Nutritionist>(`${this.basePath}/${id}`, this.httpOptions)
+  getNutritionist(id: number): Observable<Nutritionist> {
+    return this.http.get<Nutritionist>(`${this.basePath}/${id}`)
       .pipe(
         retry(2),
         catchError(this.handleError));
@@ -39,14 +39,14 @@ export class NutritionistsService {
         catchError(this.handleError));
   }
 
-  update(id: any, item: any): Observable<Nutritionist> {
-    return this.http.post<Nutritionist>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
+  update(item: any, id: number): Observable<Nutritionist> {
+    return this.http.put<Nutritionist>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));
   }
 
-  delete(id: any) {
+  delete(id: number) {
     return this.http.delete(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(
         retry(2),

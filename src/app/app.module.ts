@@ -9,7 +9,6 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { HeaderComponent } from './pages/header/header.component';
 import {NutritionistsComponent} from "./pages/nutritionists/pages/nutritionists/nutritionists.component";
 import {AppoimentComponent} from "./appoiment/appoiment.component";
-import { DialogCreateComponent } from './pages/nutritionists/pages/dialog-create/dialog-create.component';
 import {ClientsComponent} from "./pages/clients/pages/clients/clients.component";
 import {DialogCreateClientsComponent} from "./pages/clients/pages/dialog-create-clients/dialog-create-clients.component";
 import {RecipesComponent} from "./pages/recipe/pages/recipe/recipes.component";
@@ -24,7 +23,6 @@ import { DialogAddRecipeComponent } from './pages/recipe/pages/dialog-add-recipe
     HeaderComponent,
     NutritionistsComponent,
     AppoimentComponent,
-    DialogCreateComponent,
     ClientsComponent,
     DialogCreateClientsComponent,
     RecipesComponent,
@@ -38,6 +36,6 @@ import { DialogAddRecipeComponent } from './pages/recipe/pages/dialog-add-recipe
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DialogCreateComponent]
+  entryComponents: []
 })
 export class AppModule { }
