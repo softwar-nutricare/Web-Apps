@@ -58,8 +58,8 @@ export class ProfesionalProfilesComponent implements OnInit {
   }
 
   createProfesionalProfileDetails() {
-    this.profesionalProfileModelObj.experience = this.formValue.value.username;
-    this.profesionalProfileModelObj.nutricionistId = this.formValue.value.password;
+    this.profesionalProfileModelObj.experience = this.formValue.value.experience;
+    this.profesionalProfileModelObj.nutricionistId = this.formValue.value.nutricionistId;
     
     
 

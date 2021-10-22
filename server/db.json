@@ -342,72 +342,71 @@
       "id": 1,
       "experience": "Salud publica",
       "nutricionistId": 1
-     
     },
     {
       "id": 2,
       "experience": "Veterinaria Profesional",
       "nutricionistId": 2
-     
     },
     {
       "id": 3,
       "experience": "Experiencia en medicina natural",
       "nutricionistId": 3
-     
+    },
+    {
+      "id": 4
     }
-  
   ],
   "PaymentMethod": [
     {
-      "id":  1,
-      "patientId":  265,
+      "id": 1,
+      "patientId": 265,
       "cardNumber": 512355,
-      "cartType":"Debito",
+      "cartType": "Debito",
       "expirationDateMonth": 7,
       "expirationDateYear": 2026,
-      "securityCode":825,
-      "ownerFirstName":"Armando",
+      "securityCode": 825,
+      "ownerFirstName": "Armando",
       "ownerLastName": "Casas",
       "city": "Lima",
-      "billingAddress":"Av. 28 de Julio 878",
-      "billingAddressLine2":"none",
-      "postalCode":"15046",
-      "country":"Peru",
+      "billingAddress": "Av. 28 de Julio 878",
+      "billingAddressLine2": "none",
+      "postalCode": "15046",
+      "country": "Peru",
       "phoneNumber": 998565987
     },
     {
-      "id":  2,
-      "patientId":  270,
+      "id": 2,
+      "patientId": 270,
       "cardNumber": 552355,
-      "cartType":"Credito",
+      "cartType": "Credito",
       "expirationDateMonth": 12,
       "expirationDateYear": 2024,
-      "securityCode":400,
-      "ownerFirstName":"Zacarias",
+      "securityCode": 400,
+      "ownerFirstName": "Zacarias",
       "ownerLastName": "Flores",
       "city": "Lima",
-      "billingAddress":"Los Cedros 209",
-      "billingAddressLine2":"none",
-      "postalCode":"15036",
-      "country":"Peru",
+      "billingAddress": "Los Cedros 209",
+      "billingAddressLine2": "none",
+      "postalCode": "15036",
+      "country": "Peru",
       "phoneNumber": 996487587
     },
     {
-      "id":  3,
-      "patientId":  288,
+      "id": 3,
+      "patientId": 288,
       "cardNumber": 555915,
-      "cartType":"Credito",
+      "cartType": "Credito",
       "expirationDateMonth": 4,
       "expirationDateYear": 2026,
-      "securityCode":245,
-      "ownerFirstName":"Rodrigo",
+      "securityCode": 245,
+      "ownerFirstName": "Rodrigo",
       "ownerLastName": "Cuba",
       "city": "Lima",
-      "billingAddress":"Av. Salaverry 801 ",
-      "billingAddressLine2":"none",
-      "postalCode":"13611",
-      "country":"Peru",
+      "billingAddress": "Av. Salaverry 801 ",
+      "billingAddressLine2": "none",
+      "postalCode": "13611",
+      "country": "Peru",
       "phoneNumber": 996499587
     }
   ]
