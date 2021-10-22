@@ -100,6 +100,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "nutricare-crud:build:production",
+            "firebaseProject": "pry-softwar-nutricare-crud",
+            "firebaseHostingSite": "pry-softwar-nutricare-crud"
+          }
         }
       }
     }
