@@ -58,7 +58,7 @@ export class ClientsComponent implements OnInit {
     this.showAdd = true;
     this.showUpdate = false;
   }
-  createNutritionistDetails() {
+  createClientDetails() {
     this.clientModelObj.username = this.formValue.value.username;
     this.clientModelObj.password = this.formValue.value.password;
     this.clientModelObj.firstName = this.formValue.value.firstName;
@@ -79,7 +79,7 @@ export class ClientsComponent implements OnInit {
       })
   };
 
-  updateNutritionistDetails() {
+  updateClientDetails() {
     this.clientModelObj.username = this.formValue.value.username;
     this.clientModelObj.password = this.formValue.value.password;
     this.clientModelObj.firstName = this.formValue.value.firstName;
