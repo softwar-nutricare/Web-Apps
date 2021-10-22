@@ -9,9 +9,10 @@ import {BillsComponent} from "../pages/bill/pages/bills/bills.component";
 import {SpecialtiesComponent} from "../pages/specialties/pages/specialties/specialties.component";
 import {AppointmentsComponent} from "../pages/appointments/pages/appointments/appointments.component";
 import {PaymentMethodsComponent} from "../pages/paymentMethods/Pages/payment-methods/payment-methods.component";
-
+import { ProfesionalProfilesComponent } from '../pages/profesionalProfiles/pages/profesionalProfiles/profesionalProfiles.component';
 const routes: Routes = [
   { path: 'nutritionists', component: NutritionistsComponent },
+  { path: 'profesionalProfiles', component: ProfesionalProfilesComponent },
   { path: 'clients', component: ClientsComponent },
   { path: 'recipes', component: RecipesComponent },
   { path: 'diets', component: DietsComponent },
